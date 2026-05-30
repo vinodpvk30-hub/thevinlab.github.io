@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vin Lab</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0b1628;
+      color: #ffffff;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      margin-bottom: 1.2rem;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #a0aec0;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: #ffffff;
+      transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    }
+
+    .link-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.25);
+      transform: translateY(-1px);
+    }
+
+    .link-btn:active { transform: scale(0.98); }
+
+    .link-btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .link-btn.youtube   { border-color: rgba(255, 80,  80,  0.4); }
+    .link-btn.youtube:hover   { background: rgba(255, 80,  80,  0.12); border-color: rgba(255,80,80,0.6); }
+
+    .link-btn.instagram { border-color: rgba(225, 100, 180, 0.4); }
+    .link-btn.instagram:hover { background: rgba(225, 100, 180, 0.12); border-color: rgba(225,100,180,0.6); }
+
+    .link-btn.x         { border-color: rgba(180, 180, 180, 0.4); }
+    .link-btn.x:hover         { background: rgba(180, 180, 180, 0.1); border-color: rgba(180,180,180,0.6); }
+
+    .link-btn.superhive { border-color: rgba(100, 160, 255, 0.4); }
+    .link-btn.superhive:hover { background: rgba(100, 160, 255, 0.12); border-color: rgba(100,160,255,0.6); }
+
+    .link-btn.gumroad   { border-color: rgba(255, 144, 60, 0.4); }
+    .link-btn.gumroad:hover   { background: rgba(255, 144, 60, 0.12); border-color: rgba(255,144,60,0.6); }
+
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 12px;
+      color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <img src="thevinlab_logo.png" alt="The Vin Lab" class="logo" />
+
+    <p class="tagline">Matchmove &amp; VFX tools for Blender</p>
+
+    <div class="links">
+
+      <a href="https://www.youtube.com/@TheVinLab" target="_blank" rel="noopener" class="link-btn youtube">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+        </svg>
+        YouTube
+      </a>
+
+      <a href="https://www.instagram.com/thevinlab/" target="_blank" rel="noopener" class="link-btn instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.2 4.8 1.7 5 5 .1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.2 3.3-1.7 4.8-5 5-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.2-4.8-1.7-5-5C2 16.6 2 16.3 2 12s0-3.6.1-4.8c.2-3.3 1.7-4.8 5-5 1.2-.1 1.6-.1 4.9-.1zm0-2.2C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1.0 8.3 0 8.7 0 12s0 3.7.1 4.9C.3 21.3 2.7 23.7 7.1 23.9 8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7C24 15.7 24 15.3 24 12s0-3.7-.1-4.9C23.7 2.7 21.3.3 16.9.1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+        </svg>
+        Instagram
+      </a>
+
+      <a href="https://x.com/TheVinLab" target="_blank" rel="noopener" class="link-btn x">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.3 2h3.1l-6.8 7.8L22.6 22h-6.3l-4.9-6.4L5.6 22H2.5l7.3-8.3L2 2h6.5l4.4 5.8L18.3 2zm-1.1 18h1.7L6.9 3.7H5.1L17.2 20z"/>
+        </svg>
+        X (Twitter)
+      </a>
+
+      <a href="https://superhivemarket.com/creators/thevinlab" target="_blank" rel="noopener" class="link-btn superhive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        Superhive
+      </a>
+
+      <a href="https://thevinlab.gumroad.com/" target="_blank" rel="noopener" class="link-btn gumroad">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm3.6 13.2h-1.8v1.8H12v-1.8H8.4v-1.8H12V9.6h1.8v1.8h1.8v1.8z"/>
+        </svg>
+        Gumroad
+      </a>
+
+    </div>
+
+    <p class="footer">&copy; 2026 The Vin Lab &middot; thevinlab.in</p>
+
+  </div>
+</body>
+</html>
